@@ -6,12 +6,12 @@
 #    By: jcluzet <jcluzet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/20 02:26:11 by jcluzet           #+#    #+#              #
-#    Updated: 2022/09/02 00:19:20 by jcluzet          ###   ########.fr        #
+#    Updated: 2022/09/01 23:56:48 by jcluzet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-FILE='ulstr.c'
-ASSIGN='ulstr/ulstr.c'
+FILE='aff_a.c'
+ASSIGN='aff_a/aff_a.c'
 
 
 index=0
@@ -54,12 +54,12 @@ rm finalexam
 
 
 gcc -o source $FILE
-./source "L'eSPrit nE peUt plUs pRogResSer s'Il staGne et sI peRsIsTent VAnIte et auto-justification." | cat -e > sourcexam    #TESTING
+./source abc | cat -e > sourcexam    #TESTING
 rm source
 cd ../../rendu
 {
 gcc -o final $ASSIGN
-./final "L'eSPrit nE peUt plUs pRogResSer s'Il staGne et sI peRsIsTent VAnIte et auto-justification." | cat -e > finalexam     #TESTING
+./final abc | cat -e > finalexam     #TESTING
 mv finalexam ../.system/grading/
 rm final
 }  &>/dev/null
@@ -82,41 +82,12 @@ rm finalexam
 
 
 gcc -o source $FILE
-./source "S'enTOuRer dE sECreT eSt uN sIGnE De mAnQuE De coNNaiSSanCe.  " | cat -e > sourcexam    #TESTING
+./source "dubO a POIL" | cat -e > sourcexam    #TESTING
 rm source
 cd ../../rendu
 {
 gcc -o final $ASSIGN
-./final "S'enTOuRer dE sECreT eSt uN sIGnE De mAnQuE De coNNaiSSanCe.  " | cat -e > finalexam     #TESTING
-mv finalexam ../.system/grading/
-rm final
-}  &>/dev/null
-cd ../.system/grading
-DIFF=$(diff sourcexam finalexam)
-if [ "$DIFF" != "" ]
-then
-		index=$(($index + 1))
-		cat sourcexam >> traceback
-		if [ -e finalexam ]
-		then
-		cat finalexam >> traceback
-		else
-		echo "" >> traceback
-		fi
-		echo "-------" >> traceback
-fi
-rm finalexam
-
-
-
-
-gcc -o source $FILE
-./source "3:21 Ba  tOut  moUn ki Ka di KE m'en Ka fe fot" | cat -e > sourcexam    #TESTING
-rm source
-cd ../../rendu
-{
-gcc -o final $ASSIGN
-./final "3:21 Ba  tOut  moUn ki Ka di KE m'en Ka fe fot" | cat -e > finalexam     #TESTING
+./final "dubO a POIL" | cat -e > finalexam     #TESTING
 mv finalexam ../.system/grading/
 rm final
 }  &>/dev/null
@@ -140,12 +111,12 @@ rm finalexam
 
 
 gcc -o source $FILE
-./source "" | cat -e > sourcexam    #TESTING
+./source "zz sent le poney" | cat -e > sourcexam    #TESTING
 rm source
 cd ../../rendu
 {
 gcc -o final $ASSIGN
-./final "" | cat -e > finalexam     #TESTING
+./final "zz sent le poney" | cat -e > finalexam     #TESTING
 mv finalexam ../.system/grading/
 rm final
 }  &>/dev/null
@@ -167,13 +138,14 @@ rm finalexam
 
 
 
+
 gcc -o source $FILE
-./source "\n\n" | cat -e > sourcexam    #TESTING
+./source "AAAAaaaaaaaaAa" | cat -e > sourcexam    #TESTING
 rm source
 cd ../../rendu
 {
 gcc -o final $ASSIGN
-./final "\n\n" | cat -e > finalexam     #TESTING
+./final "AAAAaaaaaaaaAa" | cat -e > finalexam     #TESTING
 mv finalexam ../.system/grading/
 rm final
 }  &>/dev/null
@@ -191,7 +163,43 @@ then
 		fi
 		echo "-------" >> traceback
 fi
-# rm finalexam
+rm finalexam
+
+gcc -o source $FILE
+./source "AAAAaaaaaaaaAa" "test" | cat -e > sourcexam    #TESTING
+rm source
+cd ../../rendu
+{
+gcc -o final $ASSIGN
+./final "AAAAaaaaaaaaAa" "test" | cat -e > finalexam     #TESTING
+mv finalexam ../.system/grading/
+rm final
+}  &>/dev/null
+cd ../.system/grading
+DIFF=$(diff sourcexam finalexam)
+if [ "$DIFF" != "" ]
+then
+		index=$(($index + 1))
+		cat sourcexam >> traceback
+		if [ -e finalexam ]
+		then
+		cat finalexam >> traceback
+		else
+		echo "" >> traceback
+		fi
+		echo "-------" >> traceback
+fi
+rm finalexam
+
+
+
+
+
+
+
+
+
+
 
 if [ $index -eq 0 ]
 then

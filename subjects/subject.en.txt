@@ -1,22 +1,20 @@
-Assignment name  : ulstr
-Expected files   : ulstr.c
+Assignment name  : aff_a
+Expected files   : aff_a.c
 Allowed functions: write
 --------------------------------------------------------------------------------
 
-Write a program that takes a string and reverses the case of all its letters.
-Other characters remain unchanged.
+Write a program that takes a string, and displays the first 'a' character it
+encounters in it, followed by a newline. If there are no 'a' characters in the
+string, the program just writes a newline. If the number of parameters is not
+1, the program displays 'a' followed by a newline.
 
-You must display the result followed by a '\n'.
+Example:
 
-If the number of arguments is not 1, the program displays '\n'.
-
-Examples :
-
-$>./ulstr "L'eSPrit nE peUt plUs pRogResSer s'Il staGne et sI peRsIsTent VAnIte et auto-justification." | cat -e
-l'EspRIT Ne PEuT PLuS PrOGrESsER S'iL STAgNE ET Si PErSiStENT vaNiTE ET AUTO-JUSTIFICATION.$
-$>./ulstr "S'enTOuRer dE sECreT eSt uN sIGnE De mAnQuE De coNNaiSSanCe.  " | cat -e
-s'ENtoUrER De SecREt EsT Un SigNe dE MaNqUe dE COnnAIssANcE.  $
-$>./ulstr "3:21 Ba  tOut  moUn ki Ka di KE m'en Ka fe fot" | cat -e
-3:21 bA  ToUT  MOuN KI kA DI ke M'EN kA FE FOT$
-$>./ulstr | cat -e
+$> ./aff_a "abc" | cat -e
+a$
+$> ./aff_a "dubO a POIL" | cat -e
+a$
+$> ./aff_a "zz sent le poney" | cat -e
 $
+$> ./aff_a | cat -e
+a$
